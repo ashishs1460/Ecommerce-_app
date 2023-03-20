@@ -7,6 +7,7 @@ import categoryRoute from './routes/categoryRoute.js'
 import productRoute from './routes/productRoute.js'
 import cros from 'cors'
 import path from 'path'
+import { fileURLToPath } from 'url'
 
 
 //config env
@@ -14,6 +15,10 @@ dotenv.config()
 
 //databaseconfig
 connectDb()
+
+//es6modulefix
+const __filename= fileURLToPath(import.meta.url)
+const __dirname=path.dirname(__filename)
 
 const app=express()
 
